@@ -7,6 +7,7 @@ import rigoImage from "../../img/rigo-baby.jpg";
 const Home = () => {
 	const [color, setColor] = useState("")
 	const [modo, setModo] = useState("manual")
+	const [mostrarPurpura, setMostrarPurpura] = useState(false)
 	const coloresBoton = ["red", "yellow", "green"]
 
 	function modoAutomatico() {
@@ -47,14 +48,15 @@ const Home = () => {
 			<div className="container semaforo-palo">
 				<div id="red" className={`bg-danger cirsemaforo ${color === "red" ? "estadoSemaforo" : ""}`} onClick={() =>
 					setColor("red")}></div>
-				<div id="yellow" className={`bg-warning cirsemaforo ${color === "yellow" ? "estadoSemaforo" : ""}`} onClick={() =>
+				<div id="yellow" className={`bg-warning cirsemaforo ${color === "yellow" ? "estadoSemaforo parpadeo" : ""}`} onClick={() =>
 					setColor("yellow")}></div>
 				<div id="green" className={`bg-success cirsemaforo ${color === "green" ? "estadoSemaforo" : ""}`} onClick={() =>
 					setColor("green")}></div>
+				<div id="purple" className={mostrarPurpura ? "cirsemaforo purplelight" : ""}></div>
 			</div>
 			<div className="container d-flex justify-content-between align-items-center">
 
-				<select className="boton m-4" aria-label="Default select example"
+				<select className="boton botonElegir m-4" aria-label="Default select example"
 					onChange={(e) => setColor(e.target.value)}>
 					<option selected>Elige un color</option>
 					<option value="red">Rojo</option>
@@ -62,14 +64,17 @@ const Home = () => {
 					<option value="green">Verde</option>
 				</select>
 
-				<button className="boton m-4" onClick={() => {
+				<button className="boton m-4 botonAutomatico" onClick={() => {
 					setModo("automatico")
 					modoAutomatico()
 				}}>
 					Modo Automático
 				</button>
 
-			    <button className="boton">Añadir color púrpura</button>
+			    <button className="boton botonPurpura" onClick={()=>{
+					setMostrarPurpura(true)
+
+				}}>Añadir color púrpura</button>
 
 			</div>
 

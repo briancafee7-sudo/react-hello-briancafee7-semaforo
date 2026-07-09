@@ -63,6 +63,33 @@ body {
     width:400px;
 }
 
+.botonAutomatico{
+    background: linear-gradient(
+        to right,
+        rgb(185, 98, 98) 33%,
+        rgb(185, 185, 113) 33% 66%,
+        rgb(97, 158, 97) 66%
+    );
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    font-family: 'Arial Black', 'Segoe UI', sans-serif;
+}
+
+.botonPurpura{
+    background-color:rgb(164, 134, 192);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    font-family: 'Arial Black', 'Segoe UI', sans-serif;
+}
+
+.botonElegir{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4Aur3y_qhUo0AUE2rJN35f7hdGuY50Grtj-swBIuHpP0tUYgJu6iDSHGz&s=10");
+    background-size:contain;
+    background-position: center;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    font-family: 'Arial Black', 'Segoe UI', sans-serif;
+}
 .contenedorOpciones {
     display:flex;
     justify-content: space-between;
@@ -70,4 +97,14 @@ body {
 
 .purplelight{
     background-color: purple;
+}
+
+.parpadeo {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.2; }
+    100% { opacity: 1; }
 }
