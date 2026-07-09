@@ -11,6 +11,8 @@
 */
 body {
     background-color: gray;
+    background-image: url("https://estaticos-cdn.prensaiberica.es/clip/d8ca1357-d5fc-47a7-ac12-befa5321e4e9_16-9-discover-aspect-ratio_default_0.jpg");
+    background-size:cover;
     
 }
 
@@ -37,7 +39,7 @@ body {
     flex-direction:column;
     align-items:center;
     width:200px;
-    height:500px;
+    padding:20px;
     background-color:black;
     
 }
@@ -45,7 +47,8 @@ body {
 .cirsemaforo{
     height:160px;
     width:120px;
-    border-radius:50%
+    border-radius:50%;
+    margin:10px;
 
 }
 
@@ -58,4 +61,13 @@ body {
 .boton{
     height:100px;
     width:400px;
+}
+
+.contenedorOpciones {
+    display:flex;
+    justify-content: space-between;
+}
+
+.purplelight{
+    background-color: purple;
 }

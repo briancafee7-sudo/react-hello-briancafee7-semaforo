@@ -8,28 +8,29 @@ const Home = () => {
 	const [color, setColor] = useState("")
 	const [modo, setModo] = useState("manual")
 	const coloresBoton = ["red", "yellow", "green"]
-	let intervaloColores = null
+
 	function modoAutomatico() {
-		let index=0
+		let index = 0
 		function cambiarColor() {
-			if (index <= coloresBoton.length-1){
+			if (index <= coloresBoton.length - 1) {
 				setColor(coloresBoton[index])
 				let segundos = 0;
-	
+
 				if (index === 0) segundos = 7000;
 				if (index === 1) segundos = 3000;
 				if (index === 2) segundos = 7000;
-	
-	
-	
+
+
+
 				setTimeout(cambiarColor, segundos);
-				index ++
-	
+				index++
+
 			}
-	
-			else{
-				index=0
-	
+
+			else {
+				index = 0
+				cambiarColor()
+
 			}
 
 		}
@@ -39,7 +40,9 @@ const Home = () => {
 
 
 	return (
+
 		<div className="padre">
+
 			<div className="palito"></div>
 			<div className="container semaforo-palo">
 				<div id="red" className={`bg-danger cirsemaforo ${color === "red" ? "estadoSemaforo" : ""}`} onClick={() =>
@@ -49,16 +52,31 @@ const Home = () => {
 				<div id="green" className={`bg-success cirsemaforo ${color === "green" ? "estadoSemaforo" : ""}`} onClick={() =>
 					setColor("green")}></div>
 			</div>
-			<div className="d-flex">
-				<button className="boton mt-4" onClick={() => {
+			<div className="container d-flex justify-content-between align-items-center">
+
+				<select className="boton m-4" aria-label="Default select example"
+					onChange={(e) => setColor(e.target.value)}>
+					<option selected>Elige un color</option>
+					<option value="red">Rojo</option>
+					<option value="yellow">Amarillo</option>
+					<option value="green">Verde</option>
+				</select>
+
+				<button className="boton m-4" onClick={() => {
 					setModo("automatico")
 					modoAutomatico()
+				}}>
+					Modo Automático
+				</button>
 
-				}}>Modo Automático</button>
-
+			    <button className="boton">Añadir color púrpura</button>
 
 			</div>
-		</div>
+
+
+
+		
+		</div >
 	);
 };
 
