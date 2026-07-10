@@ -8,7 +8,7 @@ const Home = () => {
 	const [color, setColor] = useState("")
 	const [modo, setModo] = useState("manual")
 	const [mostrarPurpura, setMostrarPurpura] = useState(false)
-	const coloresBoton = ["red", "yellow", "green"]
+	const coloresBoton = ["red", "yellow", "green","yellow"]
 
 	function modoAutomatico() {
 		let index = 0
@@ -16,22 +16,19 @@ const Home = () => {
 			if (index <= coloresBoton.length - 1) {
 				setColor(coloresBoton[index])
 				let segundos = 0;
+				let colorBucle= coloresBoton[index]
 
-				if (index === 0) segundos = 7000;
-				if (index === 1) segundos = 3000;
-				if (index === 2) segundos = 7000;
-
-
+				if (colorBucle === "red") segundos = 7000;
+				if (colorBucle === "yellow") segundos = 3000;
+				if (colorBucle === "green") segundos = 7000;
 
 				setTimeout(cambiarColor, segundos);
 				index++
-
 			}
 
 			else {
 				index = 0
 				cambiarColor()
-
 			}
 
 		}
